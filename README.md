@@ -121,10 +121,3 @@ Recommended Chrome flags for CI/Xvfb (used in the example fixture): `--no-sandbo
 ## License
 
 MIT
-
-## Install
-
-```bash
-pip install -e .
-# or: pip install browser-signals  (when published)
-
