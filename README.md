@@ -78,18 +78,18 @@ Running banner helpers:
 - `show_test_banner(driver, text="Running Test...", color="#facc15", frame=None)`
 - `remove_test_banner(driver, frame=None)`
 - `navigate_with_banner(driver, url, banner_text="Running Test...", color="#facc15", frame=None)`
- 
+
 Unified banners:
- 
+
 - `show_banner(driver, text, persistent=False, flash=False, duration_ms=5000, position="top-left", full_banner=False, color=None, log=True, frame=None, id=None)`
-    - Chips (full_banner=False): position can be `top-left` or `top-right`. Persistent chips remain until you call `remove_banner`; otherwise they auto-remove after `duration_ms`.
-    - Full-width (full_banner=True): uses the large page-top banner; transient by default, or simulated persistent if `persistent=True`.
-    - `flash=True` adds a short translucent flash. `log=True` writes a console entry with a millisecond timestamp.
+  - Chips (full_banner=False): position can be `top-left` or `top-right`. Persistent chips remain until you call `remove_banner`; otherwise they auto-remove after `duration_ms`.
+  - Full-width (full_banner=True): uses the large page-top banner; transient by default, or simulated persistent if `persistent=True`.
+  - `flash=True` adds a short translucent flash. `log=True` writes a console entry with a millisecond timestamp.
 - `remove_banner(driver, id=None, full_banner=False, frame=None)`
-    - Removes by id; defaults to the running chip id when `full_banner=False`, or the main banner id when `full_banner=True`.
- 
+  - Removes by id; defaults to the running chip id when `full_banner=False`, or the main banner id when `full_banner=True`.
+
 Examples:
- 
+
 ```python
 # Chip (top-right), persistent
 from browser_signals import show_banner, remove_banner

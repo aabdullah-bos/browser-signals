@@ -9,7 +9,7 @@ description = "Non-blocking visual signals (banners/flash) for Selenium runs; op
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
-authors = [{ name = "Your Name" }]
+authors = [{ name = "Aquil Abdullah", email = "aquil@aquilabdullah.com" }]
 keywords = ["selenium", "testing", "pytest", "xvfb", "ci", "debugging"]
 classifiers = [
   "License :: OSI Approved :: MIT License",
@@ -34,9 +34,9 @@ selenium = [
 ]
 
 [project.urls]
-Homepage = "https://example.com/browser-signals"
-Repository = "https://example.com/browser-signals.git"
-Issues = "https://example.com/browser-signals/issues"
+Homepage = "https://github.com/aabdullah-bos/browser-signals"
+Repository = "https://github.com/aabdullah-bos/browser-signals.git"
+Issues = "https://github.com/aabdullah-bos/browser-signals/issues"
 
 # Auto-load the pytest plugin when pytest runs.
 # You can still disable it at runtime via the env var shown below.
