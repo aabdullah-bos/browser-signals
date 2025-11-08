@@ -18,6 +18,8 @@ permissions:
 jobs:
   release-build:
     runs-on: ubuntu-latest
+    # Only run if the release was created from the releases branch
+    if: github.event.release.target_commitish == 'releases'
 
     steps:
       - uses: actions/checkout@v4
