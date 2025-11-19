@@ -9,6 +9,7 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 
 from browser_signals import annotate_failures, mark_info
 
+
 def make_driver():
     opts = ChromeOptions()
     # For local visibility, keep headed. For CI, set HEADLESS=true env var.
@@ -20,6 +21,7 @@ def make_driver():
     opts.add_argument("--disable-gpu")
     opts.add_argument("--window-size=1280,800")
     return webdriver.Chrome(options=opts)
+
 
 def main():
     drv = make_driver()
@@ -35,6 +37,7 @@ def main():
     finally:
         time.sleep(1.0)  # Give you a moment to see the banner
         drv.quit()
+
 
 if __name__ == "__main__":
     main()

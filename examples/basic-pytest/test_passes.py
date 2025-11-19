@@ -1,6 +1,7 @@
 import time
 from browser_signals import show_test_banner, remove_test_banner
 
+
 def test_title_has_example(driver):
     # Demonstrate the running banner while this test executes
     show_test_banner(driver, text="Running: test_title_has_example")

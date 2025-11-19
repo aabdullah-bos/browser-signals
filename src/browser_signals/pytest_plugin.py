@@ -15,6 +15,7 @@ import traceback
 import time
 from .core import mark_failure, show_test_banner, remove_test_banner
 
+
 def pytest_runtest_makereport(item, call):
     # Respect opt-out
     if os.environ.get("BROWSER_SIGNALS_DISABLE_PYTEST", "").lower() in ("1", "true", "yes"):
@@ -35,7 +36,8 @@ def pytest_runtest_makereport(item, call):
     if driver is None:
         return
 
-    tb_text = "".join(traceback.format_exception(call.excinfo.type, call.excinfo.value, call.excinfo.tb))
+    tb_text = "".join(traceback.format_exception(
+        call.excinfo.type, call.excinfo.value, call.excinfo.tb))
     first_line = (tb_text.splitlines() or ["Test failed"])[0]
     msg = f"{item.name}: {first_line[:240]}"
 
@@ -52,7 +54,8 @@ def pytest_runtest_makereport(item, call):
                 time.sleep(pause)
     except Exception as e:
         # Never mask the original test failure
-        item.config.warn(code="BROWSER_SIGNALS_INJECTION_FAILED", message=str(e))
+        item.config.warn(
+            code="BROWSER_SIGNALS_INJECTION_FAILED", message=str(e))
 
 
 def _maybe_get_driver(item):
@@ -94,4 +97,3 @@ def pytest_runtest_teardown(item):
         remove_test_banner(driver)
     except Exception as _e:
         return
-

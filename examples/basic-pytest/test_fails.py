@@ -1,6 +1,7 @@
 import pytest
 from selenium.common.exceptions import NoSuchElementException
 
+
 @pytest.mark.xfail(reason="Demonstration of browser-signals on failures", strict=False)
 def test_missing_element_injects_banner(driver):
     # This will raise NoSuchElementException -> test failure

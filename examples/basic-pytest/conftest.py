@@ -1,3 +1,6 @@
+from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.common.exceptions import WebDriverException
+from selenium import webdriver
 import os
 import sys
 import time
@@ -12,9 +15,6 @@ if str(_SRC) not in sys.path:
 # If you run without installing the package (editable mode), uncomment:
 # pytest_plugins = ["browser_signals.pytest_plugin"]
 
-from selenium import webdriver
-from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.chrome.options import Options as ChromeOptions
 try:
     # Optional runtime fallback to fetch a matching chromedriver
     from webdriver_manager.chrome import ChromeDriverManager  # type: ignore
@@ -22,6 +22,7 @@ try:
     _HAS_WDM = True
 except Exception:
     _HAS_WDM = False
+
 
 @pytest.fixture(scope="function")
 def driver():
